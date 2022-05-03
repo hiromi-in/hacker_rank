@@ -1,0 +1,16 @@
+---------------Contest Leaderboard--------------
+
+WITH test
+AS
+(SELECT hacker_id AS id, MAX(score) AS score
+FROM Submissions
+GROUP BY hacker_id, challenge_id)
+
+SELECT t.id, h.name, SUM(t.score)
+FROM test t
+JOIN Hackers h
+ON t.id = h.hacker_id
+GROUP BY t.id, h.name
+HAVING SUM(t.score) <> 0
+ORDER BY SUM(t.score) DESC, t.id
+;
