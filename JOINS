@@ -25,3 +25,21 @@ WHERE Start_Date < End_Date
 GROUP BY Start_Date
 ORDER BY DATEDIFF(MIN(End_Date),Start_Date),Start_Date;
 
+
+--------------Placements-----------------------
+WITH test AS
+(SELECT s.ID AS ID, s.Name AS Name, p.Salary AS Salary, f.Friend_ID AS BF
+FROM Students s
+JOIN Friends f
+ON s.ID = f.ID
+JOIN Packages p
+ON f.ID = p.ID)
+
+SELECT t.Name
+FROM test t
+JOIN
+Packages p
+ON t.BF = p.ID
+WHERE t.salary < p.Salary
+ORDER BY p.salary
+;
