@@ -13,7 +13,13 @@ FROM STATION;
 SELECT TRUNCATE(SUM(LAT_N),4)
 FROM STATION
 WHERE LAT_N > 38.7880 AND LAT_N < 137.2345;
+
 -----Weather observation station 14----------------------
 SELECT TRUNCATE(MAX(LAT_N),4)
 FROM STATION
 WHERE LAT_N < 137.2345;
+
+-----Weather observation station 15----------------------
+SELECT ROUND(MIN(LAT_N),4)
+FROM STATION
+WHERE LAT_N > 38.7780;
