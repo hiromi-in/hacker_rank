@@ -20,6 +20,14 @@ FROM STATION
 WHERE LAT_N < 137.2345;
 
 -----Weather observation station 15----------------------
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N <137.2345
+ORDER BY LAT_N DESC
+LIMIT 1;
+
+-----Weather observation station 16----------------------
 SELECT ROUND(MIN(LAT_N),4)
 FROM STATION
 WHERE LAT_N > 38.7780;
+
