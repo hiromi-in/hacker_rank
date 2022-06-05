@@ -45,3 +45,8 @@ JOIN COUNTRY
 ON
 CITY.CountryCode = COUNTRY.Code
 WHERE COUNTRY.CONTINENT = 'Asia';
+
+-----Revising the select query 1----------------------
+SELECT *
+FROM CITY
+WHERE Countrycode = 'USA' AND population >100000;
