@@ -13,4 +13,4 @@ UNION
 FROM OCCUPATIONS 
 GROUP BY Occupation
 )
- ORDER BY COUNT(Occupation), Occupation
+
